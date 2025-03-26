@@ -39,6 +39,27 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /**
+ * Display a listing of the user's cart items.
+ *
+ * @OA\Get(
+ *     path="/cart",
+ *     summary="Get cart items",
+ *     description="Get all cart items for the authenticated user",
+ *     operationId="getCartItems",
+ *     tags={"Cart"},
+ *     security={{"bearerAuth":{}}},
+ *     @OA\Response(
+ *         response=200,
+ *         description="Success"
+ *     ),
+ *     @OA\Response(
+ *         response=401,
+ *         description="Unauthorized"
+ *     )
+ * )
+ */
     public function index()
     {
         $userId = auth()->id();
@@ -75,6 +96,39 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     /**
+ * Add a product to cart.
+ *
+ * @OA\Post(
+ *     path="/cart",
+ *     summary="Add to cart",
+ *     description="Add a product to the cart",
+ *     operationId="addToCart",
+ *     tags={"Cart"},
+ *     security={{"bearerAuth":{}}},
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\JsonContent(
+ *             required={"product_id", "quantity"},
+ *             @OA\Property(property="product_id", type="integer", example=1),
+ *             @OA\Property(property="quantity", type="integer", example=2)
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response=201,
+ *         description="Created"
+ *     ),
+ *     @OA\Response(
+ *         response=401,
+ *         description="Unauthorized"
+ *     ),
+ *     @OA\Response(
+ *         response=422,
+ *         description="Validation error"
+ *     )
+ * )
+ */
     public function store(StoreCartRequest $request)
     {
         try {
