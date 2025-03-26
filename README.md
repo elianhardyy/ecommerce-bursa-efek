@@ -2,6 +2,25 @@
 
 A comprehensive RESTful API for an e-commerce platform built with Laravel.
 
+## Swagger Documentation
+
+[Swagger Documentation]
+
+1. remove cache configuration on Laravel.
+
+```bash
+php artisan config:clear
+```
+
+2. generate swagger
+
+```bash
+php artisan artisan l5-swagger:generate
+```
+
+3. visit this site to see the documentation
+   http://localhost:8000/api/documentation
+
 ## Features
 
 -   User authentication with JWT
