@@ -172,7 +172,7 @@ php artisan config:clear
 2. generate swagger
 
 ```bash
-php artisan artisan l5-swagger:generate
+php artisan l5-swagger:generate
 ```
 
 3. visit this site to see the documentation

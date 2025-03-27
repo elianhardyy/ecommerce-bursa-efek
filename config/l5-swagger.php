@@ -50,6 +50,7 @@ return [
         ],
     ],
     'defaults' => [
+        //'authenticate' => false,
         'routes' => [
             /*
              * Route for accessing parsed swagger annotations.
@@ -230,7 +231,12 @@ return [
                     'passport' => []
                     */
                 ],
-            ],
+                // 'bearerAuth' => [
+                //         'type' => 'http',
+                //         'scheme' => 'bearer',
+                //         'bearerFormat' => 'JWT'
+                //     ],
+                ],
         ],
 
         /*

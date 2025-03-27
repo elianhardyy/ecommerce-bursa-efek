@@ -26,6 +26,15 @@ use Tymon\JWTAuth\Facades\JWTAuth;
  *     url="http://localhost:8000/api/",
  *     description="API dengan prefix"
  * )
+ * @OA\SecurityScheme(
+ *    type="http",
+ * description="Login with email and password to get the authentication token",
+ * name="Token based",
+ * in="header",
+ * scheme="bearer",
+ * bearerFormat="JWT",
+ * securityScheme="bearerAuth"
+ * )
  */
 class AuthController extends Controller
 {
