@@ -36,11 +36,12 @@ class CategoryProductController extends Controller
  * Display a listing of the resource.
  *
  * @OA\Get(
- *     path="/categories",
+ *     path="/category-products",
  *     summary="Get categories",
  *     description="Get all product categories",
  *     operationId="getCategories",
  *     tags={"Categories"},
+ * security={{"bearerAuth":{}}},
  *     @OA\Response(
  *         response=200,
  *         description="Success"
@@ -87,7 +88,7 @@ class CategoryProductController extends Controller
  * Store a newly created resource in storage.
  *
  * @OA\Post(
- *     path="/categories",
+ *     path="/category-products",
  *     summary="Create category",
  *     description="Create a new product category",
  *     operationId="createCategory",
@@ -137,11 +138,12 @@ class CategoryProductController extends Controller
  * Display the specified resource.
  *
  * @OA\Get(
- *     path="/categories/{id}",
+ *     path="/category-products/{id}",
  *     summary="Get category",
  *     description="Get a specific product category",
  *     operationId="getCategory",
  *     tags={"Categories"},
+ * security={{"bearerAuth":{}}},
  *     @OA\Parameter(
  *         name="id",
  *         in="path",
@@ -194,7 +196,7 @@ class CategoryProductController extends Controller
  * Update the specified resource in storage.
  *
  * @OA\Put(
- *     path="/categories/{id}",
+ *     path="/category-products/{id}",
  *     summary="Update category",
  *     description="Update a product category",
  *     operationId="updateCategory",
@@ -259,7 +261,7 @@ class CategoryProductController extends Controller
  * Remove the specified resource from storage.
  *
  * @OA\Delete(
- *     path="/categories/{id}",
+ *     path="/category-products/{id}",
  *     summary="Delete category",
  *     description="Delete a product category",
  *     operationId="deleteCategory",

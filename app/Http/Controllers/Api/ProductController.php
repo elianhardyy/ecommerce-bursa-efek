@@ -42,6 +42,7 @@ class ProductController extends Controller
  *     description="Get all products with pagination",
  *     operationId="getProducts",
  *     tags={"Products"},
+ * security={{"bearerAuth":{}}},
  *     @OA\Response(
  *         response=200,
  *         description="Success"
@@ -141,6 +142,7 @@ class ProductController extends Controller
  *     description="Get a specific product",
  *     operationId="getProduct",
  *     tags={"Products"},
+ * security={{"bearerAuth":{}}},
  *     @OA\Parameter(
  *         name="id",
  *         in="path",
